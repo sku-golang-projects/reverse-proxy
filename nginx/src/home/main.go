@@ -13,7 +13,7 @@ func WelcomePage(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	log.Println("Starting home server.")
+	log.Println("Starting home service.")
 
 	router := mux.NewRouter()
 	homeRouter := router.PathPrefix("/home/api/v1").Subrouter()

@@ -17,6 +17,20 @@ services:
     networks:
       - proxy_net
 
+  inventoryservice:
+    image: inventory:0.1
+    ports:
+      - "8082:8082"
+    networks:
+      - proxy_net
+
+  orderservice:
+    image: order:0.1
+    ports:
+      - "8083:8083"
+    networks:
+      - proxy_net
+
 networks:
   proxy_net:
     name: proxy_net
