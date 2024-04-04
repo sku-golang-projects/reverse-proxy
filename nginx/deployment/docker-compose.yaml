@@ -1,0 +1,23 @@
+services:
+  nginx:
+    image: nginx:latest
+    ports:
+      # HOST_PORT:CONTAINER_PORT 
+      - "8080:80"
+    volumes:
+      #- hostPath:containerPath:ro
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    networks:
+      - proxy_net
+
+  homeservice:
+    image: home:0.1
+    ports:
+      - "8081:8081"
+    networks:
+      - proxy_net
+
+networks:
+  proxy_net:
+    name: proxy_net
+    driver: bridge
