@@ -11,6 +11,7 @@ services:
       - ./about:/usr/share/nginx/html/about:ro
       - ./nginx.conf:/etc/nginx/nginx.conf:ro
       - ./static:/usr/share/nginx/html/static:ro
+      - ./domain:/usr/share/nginx/html/domain:ro
     networks:
       - proxy_net
 
